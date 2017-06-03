@@ -4,21 +4,19 @@ class Title
 # http://codingforproduct.com/coding_exercise.html
 
   def truncate(text, cutoff_length = 50, string_suffix = "...")
-    text_length = cutoff_length - string_suffix.length
-    shortened_text = text[0..text_length+1]
-    shortened_text + string_suffix
-  end
+    if text >= cutoff_length
+      text_length = cutoff_length - string_suffix.length
+      shortened_text = text[0..text_length+1]
+      shortened_text + string_suffix
+    else
+      text
+    end
+  end  
 
   def link_title(given_hash)
     full_title = given_hash[:title]
-    link = given_hash[:link]  
-
-    if full_title.length >= 50
-      truncated_title = truncate(full_title)
-      '<a href="' + link + '">'  + truncated_title + '</a>'
-    else
-      '<a href="' + link + '">'  + full_title + '</a>'
-    end
+    link = given_hash[:link]
+    '<a href="' + link + '">'  + full_title + '</a>'
   end
 
 
