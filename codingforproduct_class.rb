@@ -1,8 +1,7 @@
 class Title
 
-  # Example 1 Jen Diamond ----------------------------------
-
-  # http://codingforproduct.com/coding_exercise.html
+# Example 1 Jen Diamond ----------------------------------
+# http://codingforproduct.com/coding_exercise.html
 
   def truncate(text, cutoff_length = 50, string_suffix = "...")
     text_length = cutoff_length - string_suffix.length
@@ -10,7 +9,7 @@ class Title
     shortened_text + string_suffix
   end
 
-  def linked_title(given_hash)
+  def link_title(given_hash)
     full_title = given_hash[:title]
     link = given_hash[:link]  
 
@@ -22,23 +21,17 @@ class Title
     end
   end
 
-  #puts "Example One:"
-  #puts linked_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
 
-  # Example 2 Jen Diamond ----------------------------------
+# Example 2 Jen Diamond ----------------------------------
 
-
-  def linked_titles(title_link_arr)
+  def link_titles(title_link_arr)
     result=[]
     titles_and_links = title_link_arr
     titles_and_links.each do |x|
-      result << linked_title(x)
+      result << link_title(x)
     end
     result
   end
-
-  #puts "Example Two:"
-  #puts linked_title_array(EX2)
 
 end
 
@@ -60,7 +53,5 @@ EX2 = [
 ]
 
 t = Title.new
-p t.linked_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
-p t.linked_titles(EX2)
-
-
+puts t.link_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
+puts t.link_titles(EX2)

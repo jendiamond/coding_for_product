@@ -2,5 +2,5 @@
 These solutions are done in Ruby 2.3.0
 
 ### Run them like this:
-#### $ `ruby codingforproduct_coding exercises.rb`
-#### $ `ruby codingforproduct_coding exercises_class.rb`
+#### $ `ruby ruby codingforproduct_coding_exercises.rb`
+#### $ `ruby codingforproduct_class.rb`

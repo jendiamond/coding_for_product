@@ -3,25 +3,23 @@
 # http://codingforproduct.com/coding_exercise.html
 
 def truncate(text, cutoff_length = 50, string_suffix = "...")
-  text_length = cutoff_length - string_suffix.length
-  shortened_text = text[0..text_length+1]
-  shortened_text + string_suffix
-end
-
-def linked_title(given_hash)
-  full_title = given_hash[:title]
-  link = given_hash[:link]
-
-  if full_title.length >= 50
-    truncated_title = truncate(full_title)
-    '<a href="' + link + '">'  + truncated_title + '</a>'
+  if text >= cutoff_length
+    text_length = cutoff_length - string_suffix.length
+    shortened_text = text[0..text_length+1]
+    shortened_text + string_suffix
   else
-    '<a href="' + link + '">'  + full_title + '</a>'
+    text
   end
 end
 
+def link_title(given_hash)
+  full_title = given_hash[:title]
+  link = given_hash[:link]
+  '<a href="' + link + '">'  + full_title + '</a>'
+end
+
 puts "Example One:"
-puts linked_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
+puts link_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
 
 # Example 2 Jen Diamond ----------------------------------
 
@@ -40,14 +38,14 @@ EX2 = [
   }
 ]
 
-def linked_titles(title_link_arr)
+def link_titles(title_link_arr)
   result=[]
   titles_and_links = title_link_arr
   titles_and_links.each do |x|
-    result << linked_title(x)
+    result << link_title(x)
   end
   result
 end
 
 puts "Example Two:"
-puts linked_titles(EX2)
+puts link_titles(EX2)
