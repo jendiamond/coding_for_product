@@ -4,7 +4,7 @@ class Title
 # http://codingforproduct.com/coding_exercise.html
 
   def truncate(text, cutoff_length = 50, string_suffix = "...")
-    if text >= cutoff_length
+    if text.length >= cutoff_length
       text_length = cutoff_length - string_suffix.length
       shortened_text = text[0..text_length+1]
       shortened_text + string_suffix
@@ -53,3 +53,4 @@ EX2 = [
 t = Title.new
 puts t.link_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
 puts t.link_titles(EX2)
+puts t.truncate("really, really, really long title that will be chopped off")
