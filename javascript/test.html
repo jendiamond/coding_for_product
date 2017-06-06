@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      var truncate = function(text) {
+        if(text.length >= 50) {
+          cutoff_length = 50;
+          string_suffix = "...";
+          text_length = cutoff_length - string_suffix.length;
+          shortened_text = text.slice(0, text_length+1);
+          console.log(shortened_text + string_suffix);
+        }
+        else {
+          console.log(text);
+        }
+      }
+      truncate("The Princess Bride: S. Morgenstern's Classic Tale of True Love and High Adventure");
+            truncate("The Princess Bridester!");
+    </script>
+  </head>
+  <body>
+    Hello
+  </body>
+</html>
