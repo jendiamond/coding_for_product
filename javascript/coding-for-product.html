@@ -13,8 +13,18 @@
           console.log(text);
         }
       }
+
+      var link_title = function(given_object) {
+        given = given_object;
+        title = given.title;
+        link = given.link;
+        console.log('<a href="' + link + '">'  + title + '</a>')
+      }
+
       truncate("The Princess Bride: S. Morgenstern's Classic Tale of True Love and High Adventure");
-            truncate("The Princess Bridester!");
+      truncate("The Princess Bridester!");
+
+      link_title({title: "really, really, really long title that will be chopped off", link: 'example.com'});
     </script>
   </head>
   <body>
