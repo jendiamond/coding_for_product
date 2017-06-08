@@ -5,20 +5,17 @@ class Title
 
   def truncate(text, cutoff_length = 50, string_suffix = "...")
     if text.length >= cutoff_length
-      text_length = cutoff_length - string_suffix.length
-      shortened_text = text[0..text_length+1]
-      shortened_text + string_suffix
+      truncated_text = text[0..cutoff_length-1] + string_suffix
     else
       text
     end
-  end  
-
-  def link_title(given_hash)
-    full_title = given_hash[:title]
-    link = given_hash[:link]
-    '<a href="' + link + '">'  + full_title + '</a>'
   end
 
+  def link_title(title_link_hash)
+    full_title = truncate(title_link_hash[:title])
+    link = title_link_hash[:link]
+    '<a href="' + link + '">'  + full_title + '</a>'
+  end
 
 # Example 2 Jen Diamond ----------------------------------
 
@@ -51,6 +48,7 @@ EX2 = [
 ]
 
 t = Title.new
+puts "Example One:"
 puts t.link_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
+puts "Example Two:"
 puts t.link_titles(EX2)
-puts t.truncate("really, really, really long title that will be chopped off")

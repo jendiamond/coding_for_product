@@ -21,10 +21,73 @@
         console.log('<a href="' + link + '">'  + title + '</a>')
       }
 
+# Example 2 - Javascript - Jen Diamond ----------------------------------
+
+var example2 = [
+  {
+    title: 'Github',
+    link: 'github.com'
+  },
+  {
+    title: 'Google',
+    link: 'google.com'
+  },
+  {
+    title: 'really, really, really long title that will be chopped off',
+    link: 'example.com'
+  }
+];
+
+        link_titles = example2.forEach(function(title_link_arr)) {
+
+        (value => result << link_title(obj))
+
+        result = [];
+        titles_and_links = title_link_arr
+        titles_and_links.each do |x|
+          result << link_title(x)
+        end
+        console.log(result)
+      }
+
+
+link_titles = for (var i = 0; i < example2.length; i++) {
+                result = [];
+                result << (i.link_title);
+                console.log(result);
+              }
+
+
+var list = [8, 3, 11, 9, 6];
+
+list.forEach(function(value, i) {
+  console.log(value);
+});
+
+
+for (var key in validation_messages) {
+    // skip loop if the property is from prototype
+    if (!validation_messages.hasOwnProperty(key)) continue;
+
+    var obj = validation_messages[key];
+    for (var prop in obj) {
+        // skip loop if the property is from prototype
+        if(!obj.hasOwnProperty(prop)) continue;
+
+        // your code
+        alert(prop + " = " + obj[prop]);
+    }
+}
+
+
+
       truncate("The Princess Bride: S. Morgenstern's Classic Tale of True Love and High Adventure");
       truncate("The Princess Bridester!");
 
       link_title({title: "really, really, really long title that will be chopped off", link: 'example.com'});
+
+      link_titles(example2);
+
     </script>
   </head>
   <body>
