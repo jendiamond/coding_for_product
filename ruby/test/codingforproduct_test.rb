@@ -23,4 +23,16 @@ class TestTitle < Minitest::Test
     assert_equal "<a href=\"example.com\">really, really, really long title that will be cho...</a>",
     @title.link_title({title: "really, really, really long title that will be cho...", link: 'example.com'})
   end
+
+  def test_link_titles
+    titles_and_links = [
+      {title: 'Github',link: 'github.com'},
+      {title: 'Google',link: 'google.com'},
+      {title: 'really, really, really long title that will be chopped off',link: 'example.com'}
+    ]
+    assert_equal ["<a href=\"github.com\">Github</a>",
+                  "<a href=\"google.com\">Google</a>",
+                  "<a href=\"example.com\">really, really, really long title that will be cho...</a>"],
+    @title.link_titles(titles_and_links)
+  end
 end
