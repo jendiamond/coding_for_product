@@ -1,7 +1,7 @@
 class Title
 
 # Example 1 Jen Diamond ----------------------------------
-# http://codingforproduct.com/coding_exercise.html
+# http://codingforproduct.com/coding_exercise
 
   def truncate(text, cutoff_length = 50, string_suffix = "...")
     if text.length >= cutoff_length
@@ -33,22 +33,14 @@ end
 # ----------------------------------
 
 EX2 = [
-  {
-    title: 'Github',
-    link: 'github.com'
-  },
-  {
-    title: 'Google',
-    link: 'google.com'
-  },
-  {
-    title: 'really, really, really long title that will be chopped off',
-    link: 'example.com'
-  }
+  {title: 'Github',link: 'github.com'},
+  {title: 'Google',link: 'google.com'},
+  {title: 'really, really, really long title that will be chopped off',link: 'example.com'}
 ]
 
 t = Title.new
 puts "Example One:"
 puts t.link_title({title: "really, really, really long title that will be chopped off", link: 'example.com'})
+
 puts "Example Two:"
 puts t.link_titles(EX2)
